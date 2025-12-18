@@ -1,0 +1,17 @@
+.skills-container {
+    display: flex;
+    justify-content: space-around; /* equally spaces logos */
+    align-items: center;           /* vertically centers them */
+    padding: 2rem 0;
+    flex-wrap: wrap;               /* wraps to next line if screen is small */
+    gap: 2rem;                     /* optional: adds extra space between logos */
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;  /* circular logos */
+    object-fit: cover;    /* keeps image proportions */
+}
+
+
