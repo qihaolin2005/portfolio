@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/josefin-sans": "^5.2.8",
     "@fontsource/playwrite-au-tas": "^5.2.9",
     "@tailwindcss/vite": "^4.1.18",
     "react": "^19.2.0",

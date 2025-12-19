@@ -1,22 +1,21 @@
 import React from "react";
 import "./card.css";
 
-function Card({subImages}) {
+
+function Card({image, title, description, subImages, link}) {
   return (
     <div
-      className="user-card ocean-box">
+      className="user-card ocean-box" onClick={() => window.open(link, '_blank')}>
       <div className="user-card-image">
-        <img src="/tensoract.png" alt="Tensoract"/>
+        <img src={image.src} alt={image.alt}/>
       </div>
 
       <div className="user-card-content">
-        <div className="user-card-content-title">Tensoract</div>
-        Tensoract is a scalable AI data labeling and training platform built to accelerate supervised learning for ML
-        and LLM systems. By unifying annotation, training, and evaluation workflows, it significantly reduces model
-        iteration time and improves training efficiency in production environments.
+        <div className="user-card-content-title">{title}</div>
+        {description}
         <div className="user-card-subImage">
-          {subImages.map((src, i) => (
-            <img key={i} src={src} alt={`Subimage ${i}`}/>
+          {subImages.map((subImage, i) => (
+            <img key={i} src={subImage.src} alt={subImage.alt}/>
           ))}
         </div>
       </div>

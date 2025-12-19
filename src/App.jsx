@@ -1,8 +1,8 @@
 import React from 'react';
-import linkedinImage from '/linkedin_logo.jpg'
-import githubImage from '/github.jpg'
 import Skills from './components/skills.jsx'; // <-- correct path to Skills.jsx
 import Projects from "./components/projects.jsx";
+import "@fontsource/inter";
+import Contact from "./components/contact.jsx";
 
 
 
@@ -21,6 +21,7 @@ function App() {
 
 
             <Projects/>
+            <Contact/>
         </div>
     );
 }
