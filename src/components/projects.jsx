@@ -1,11 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
 import Card from "./card/card.jsx"
 import "./projects.css"
 
 
 function Projects() {
-    const ref = useRef(null);
-    const [visible, setVisible] = useState(false);
 
     const tensoract = {src:"/tensoract.png", alt:"Tensoract"};
     const tensoractTitle = "Tensoract";
@@ -34,38 +31,14 @@ function Projects() {
       "Users can build powerful, data-driven tools without writing a single line of code."
     const chartappsSubImages = [{src:"/javascript.png", alt:"javascript"}, {src:"/mongodb.svg", alt:"mongo"}, {src:"/aws.png", alt:"Amazon Web Services"},]
     const chartappsLink = "https://chartapps.com/"
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisible(true);
-                        observer.unobserve(ref.current);
-                    }
-                });
-            },
-            { threshold: 0.5 } // 20% visible triggers animation
-        );
-
-        observer.observe(ref.current);
-    }, []);
 
     return (
 
-        <div
-            ref={ref}
-            style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0px)" : "translateY(40px)",
-                transition: "all 0.8s ease-out",
-                padding: "100px 0",
-                textAlign: "center",
-            }}
-        >
+        <div style={{marginBottom: "20px"}}>
             <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>Projects</h1>
 
-            <p style={{ fontSize: "1.2rem", color: "#ddd", maxWidth: "600px", margin: "0 auto" }}>
-                This section fades + slides up when you scroll down to it.
+            <p style={{ fontSize: "1.2rem", color: "white", maxWidth: "600px", margin: "0 auto" }}>
+                These are some of the projects I've worked on.
             </p>
           <div className={"projects-section"}>
             <Card image={tensoract} title={tensoractTitle} description={tensoractDescription} subImages={tensoractSubImages} link={tensoractLink}/>
